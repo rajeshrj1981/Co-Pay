@@ -1,0 +1,13 @@
+/* Empty. Add your own CSS if you like 
+
+.menu.menu-left{
+	width: calc(30% - 20px) !important;
+}
+.menu-open .menu-content{
+	transform: translate3d(calc(30% - 20px), 0px, 0px) !important;
+}
+*/
+
+.custom-popup.popup-container .popup .button {
+	background-color: green;
+}

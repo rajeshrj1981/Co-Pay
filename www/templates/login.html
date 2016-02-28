@@ -1,0 +1,25 @@
+<ion-view title={{title}}>
+          <ion-nav-bar class="bar-dark">
+           <!-- <ion-nav-back-button class="button-icon ion-arrow-left-c">
+            </ion-nav-back-button>-->
+          </ion-nav-bar>
+    <ion-content padding="true">
+        <div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input ng-model="data.username" type="text" placeholder="Username"  value=""/>
+                </label>
+                <label class="item item-input">
+                    <input ng-model="data.password" type="password" placeholder="Password" value="" />
+                </label>
+            </div>
+            <div class="padding-left padding-right">
+                <div class="button-bar">
+                    <a class="button button-balanced" ng-click="login(data.username, data.password)">Login</a>
+					&nbsp;
+                    <a class="button button-balanced" ng-click="register(data.username, data.password)">Register</a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

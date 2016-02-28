@@ -1,0 +1,32 @@
+<ion-view title={{title}}>    
+    <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+    <ion-content padding="true">	
+	<div class="list list-inset">
+       <div class="item item-input" ng-show="userData.imageReady">
+            <div class="col col-60" ng-show="userData.showFront">
+                <img ng-src="data:image/jpeg;base64,{{images[0].image}}" width="100%" />
+       </div>
+        <div class="col col-60" ng-hide="userData.showFront">
+             <img ng-src="data:image/jpeg;base64,{{images[1].image}}" width="100%" />
+         </div>
+			<button class="button button-icon ion-ios-loop-strong" ng-click="flipImage()" ng-if="images.length > 1"> </button>
+        </div>	
+	</div>
+	<div class="list list-inset">
+	<div class="item">
+	<button class="button button-icon icon ion-camera" ng-click="upload()"> {{scanCardLabel}}</button>	</div>
+	<div class="item">
+	<select ng-model="userData.state" ng-options="state.$id as state.$value for state in states">
+	</select>
+	</div>
+	<div >
+	<label class="item item-input">
+		<input ng-model="userData.dob" type="text" placeholder="Date of Birth" />
+	</label></div>
+     </div> 
+	<button class="button button-balanced" ng-click="redo()" ng-if="images.length > 0"> {{redoLabel}}</button>
+	<button class="button button-balanced" ng-click="save()"> {{doneLabel}}</button>	 
+    </ion-content>
+</ion-view>
