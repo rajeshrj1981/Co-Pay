@@ -13,6 +13,7 @@ angular.module("starter").controller("UploadController", function($scope, $ionic
 		var fbAuth = fb.getAuth();
 		if(fbAuth) {
 			userReference = fb.child("users/" + fbAuth.uid);
+			syncArray = $firebaseArray(userReference.child("images"));
 			statesArray = $firebaseArray(fb.child('states')); 
 			$scope.states = statesArray;
 			statesArray.$loaded().then(function(x) {
@@ -65,7 +66,6 @@ angular.module("starter").controller("UploadController", function($scope, $ionic
 	}
 	
     $scope.upload = function(language) {
-		syncArray = $firebaseArray(userReference.child("images"));
 		$scope.userData.showFront = true;
 		if(syncArray.length >= 2) {
 			$rootScope.showAlert("Already two photos available");
