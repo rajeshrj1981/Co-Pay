@@ -4,7 +4,7 @@ var fb = new Firebase("https://co-pay.firebaseio.com/");
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-var imageApp = angular.module('starter', ['ionic','ngCordova','firebase'])
+var imageApp = angular.module('starter', ['ionic','ngCordova','firebase','ionic-datepicker'])
 
 .run(function($ionicPlatform,$rootScope,$ionicLoading,$window,$firebaseAuth,$http,$ionicPopup) {
   $ionicPlatform.ready(function() {

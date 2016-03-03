@@ -2,15 +2,14 @@
     <ion-nav-buttons side="left">
     <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-log-out" ng-click="logOut()"></button>
+  </ion-nav-buttons>  
     <ion-content padding="true">	
 <div class="card">
   <div class="item item-text-wrap">
 	{{coverageText}}
   </div>
 </div>
-<br>
-	<div class="button-bar">
-		<a class="button button-balanced" ng-click="logOut()">Log Out</a>
-	</div>
     </ion-content>
 </ion-view>

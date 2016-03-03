@@ -11,3 +11,27 @@
 .custom-popup.popup-container .popup .button {
 	background-color: green;
 }
+
+.image-container {
+    display: inline-block;
+    position: relative;
+width: 100%;
+}
+
+.flip-button {
+    position: absolute;    
+    right: 10px;
+    top: 10px;
+}
+
+.child-item {
+padding: 0;
+	width:100%;
+}
+
+.button.cobutton {
+    background-color: #33cd5f;
+border-color: transparent;
+color: #fff; 
+width: 50%;
+}

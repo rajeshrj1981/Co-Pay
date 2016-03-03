@@ -17,6 +17,7 @@ angular.module("starter").controller("UploadController", function($scope, $ionic
 			statesArray = $firebaseArray(fb.child('states')); 
 			$scope.states = statesArray;
 			statesArray.$loaded().then(function(x) {
+				$scope.userData.state = "AA";
 				$rootScope.hide();
 			}).catch(function(error) {
 				console.log("Error:", error);
@@ -37,6 +38,38 @@ angular.module("starter").controller("UploadController", function($scope, $ionic
 		}
 	}
 	
+    $scope.datepickerObject = {
+      titleLabel: 'DOB',  //Optional
+      todayLabel: 'Today',  //Optional
+      closeLabel: 'Close',  //Optional
+      setLabel: 'Select',  //Optional
+      setButtonType : 'button-balanced',  //Optional
+      todayButtonType : 'button-balanced',  //Optional
+      closeButtonType : 'button-balanced',  //Optional
+      //inputDate: new Date(),  //Optional
+      mondayFirst: true,  //Optional
+      //disabledDates: disabledDates, //Optional
+      //weekDaysList: weekDaysList, //Optional
+      //monthList: monthList, //Optional
+      templateType: 'popup', //Optional
+      showTodayButton: 'true', //Optional
+      modalHeaderColor: 'bar-balanced', //Optional
+      modalFooterColor: 'bar-balanced', //Optional
+      from: new Date(2012, 8, 2), //Optional
+      to: new Date(2018, 8, 25),  //Optional
+      callback: function (val) {  //Mandatory
+        datePickerCallback(val);
+      },
+      dateFormat: 'MM/dd/yyyy', //Optional
+      closeOnSelect: false, //Optional
+    };
+	
+	datePickerCallback = function(val){
+		$scope.datepickerObject.inputDate = val;
+		//var dateStr = val.toISOString().slice(0, 10);
+		var datestring = (val.getMonth()+1)  + "/" +  val.getDate()+ "/" + val.getFullYear();
+		$scope.userData.dob = datestring;
+	}
 	$scope.save = function(){	
 		userDataRef = userReference.child("userData");
 		userDataRef.set({
